@@ -28,7 +28,7 @@ void ShowVariableInfo(T t)
 template <typename T>
 void ShowContainer(T c)
 {
-	cout <<"  type:" << typeid(c).name()<<"\tsize:\t" << c.size() << endl;
+	cout <<"   type:" << typeid(c).name()<<"\tsize:\t" << c.size() << endl << "element:";
     for(typename T::const_iterator iter = c.begin(); iter != c.end(); iter++)
         {
             cout << *iter << " ";

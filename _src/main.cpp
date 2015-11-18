@@ -10,7 +10,7 @@
 
 //custom
 #include "helloworld.h"
-
+#include "basic.h"
 //using
 using namespace std;
 
@@ -23,6 +23,7 @@ int main()
     _resize();
     _at();
     _erase();
+    _pointer();
 
 
 
@@ -186,14 +187,22 @@ void _erase()
 	cout << *iter << endl;
 	ShowContainer(nVec);
 
-	//?
-	for(vector<int>::iterator it = nVec.begin(); it != nVec.end(); it++)
+	//典型的erase操作
+	cout << endl << "erase()" << endl;
+	nVec = {1,2,3,4,5,6,7,8,9,10};
+	for(vector<int>::iterator it = nVec.begin(); it != nVec.end(); cout << endl)
 	{
 		auto &i = *it;
 		if(( i % 2) == 0)
 		{
-			nVec.erase(it);
+			cout << "删除" << i ;
+			it = nVec.erase(it);
+		}else{
+			cout << "保留" << i ;
+			it++;
 		}
+		cout << endl;
+		ShowContainer(nVec);
 	}
 	ShowContainer(nVec);
 }
