@@ -7,10 +7,11 @@
 #include <forward_list>
 #include <deque>
 #include <typeinfo>
-
+#include <memory.h>
 //custom
 #include "helloworld.h"
 #include "basic.h"
+#include "../HDIW/ForwardList.h"
 //using
 using namespace std;
 
@@ -24,11 +25,14 @@ int main()
     _at();
     _erase();
     _pointer();
+    _capacity();
+    _charArray();
+    _sizeof();
 
-
-
+    _ForwardList<int>lst(10,100);
     return 0;
 }
+
 
 void showVector(vector<int>& vec)
 {
@@ -159,7 +163,7 @@ void _erase()
 
 	// clear
 	string str;
-	str = "Hello Wolrd !!!";
+	str = "Hello World !!!";
 	ShowContainer(str);
 	str.clear();
 	ShowContainer(str);
@@ -205,4 +209,78 @@ void _erase()
 		ShowContainer(nVec);
 	}
 	ShowContainer(nVec);
+}
+
+void _charArray()
+{
+	// 下面两个数组的区别
+	char ch[10] = {'1','2','3','4','5','6','7','8','9','\0',};
+	char charray[10] = {'1','2','3','4','5','6','7','8','9','10',};
+	cout << ch << endl;
+	for(int i=0; i<10; i++)
+	{
+		cout<<charray[i] <<" " ;
+	}
+
+	cout << endl;
+	char c = '\0';
+	int  nEnd = (int)c;
+	cout << nEnd << endl;
+}
+
+
+void _capacity()
+{
+	vector<int>ivec  = {1,2,3,4,5,6,7,8,9,10};
+	cout << "size : "<<ivec.size() <<"capacity : "<<ivec.capacity() << endl;
+	ivec.push_back(11);
+	cout << "size : "<<ivec.size() <<"capacity : "<<ivec.capacity() << endl;
+	ivec.resize(21,1);
+	cout << "size : "<<ivec.size() <<"capacity : "<<ivec.capacity() << endl;
+	ivec.push_back(12);
+	cout << "size : "<<ivec.size() <<"capacity : "<<ivec.capacity() << endl;
+	ShowContainer(ivec);
+}
+
+typedef struct _st
+{
+	char ch;
+	char note[32];
+	char tips[32];
+
+}ST;
+
+void AnalyzeData(char* lp)
+{
+	char ch;
+	ch = * lp;
+	cout << "ch\t"<<ch << endl;
+
+	char note[32] = {0};
+	lp ++;
+	memcpy(note,lp,32);
+	string str(note);
+	cout <<"note\t" <<str << endl;
+}
+void _sizeof()
+{
+	char ch[10] = {'1','2','3','4','5','6','7','8','9','\0',};
+	cout << "sizeof :" << sizeof(ch) << endl;
+
+	char lpData[65] = {0};
+	ST st;
+	st.ch = 'a';
+	memcpy(st.note ,"Hello World!!!",32);;
+
+	*lpData = st.ch;
+
+	memcpy(lpData +1,st.note,32);
+
+	memcpy(lpData + 33, st.tips,32);
+
+	AnalyzeData(lpData);
+
+	string str;
+	str.append(lpData);
+	cout << str << endl;
 }

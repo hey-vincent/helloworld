@@ -1,14 +1,15 @@
-#pragma onece
+
 #include <typeinfo>
 #include <iostream>
 using namespace std;
 
 
 
+#ifndef _HELLO_WORLD_H
+#define _HELLO_WORLD_H
 
-void showVector(vector<int>& vec);  //原始的打印容器中的全部元素的函数
 
-
+void showVector(vector<int>& vec);
 
 
 void  _auto();
@@ -17,6 +18,11 @@ void  _front_back();
 void  _resize();
 void  _at();
 void  _erase();
+void  _capacity();
+
+void _sizeof();
+
+void _charArray();
 
 
 template <typename T>
@@ -36,3 +42,4 @@ void ShowContainer(T c)
     cout << endl;
 }
 
+#endif
