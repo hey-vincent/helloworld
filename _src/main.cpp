@@ -30,6 +30,8 @@ int main()
     _sizeof();
 
     _ForwardList<int>lst(10,100);
+	int x;
+	cin >> x;
     return 0;
 }
 
@@ -248,6 +250,12 @@ typedef struct _st
 	char note[32];
 	char tips[32];
 
+	_st()
+	{
+		ch = '\0';
+		memset(note, 0, 32);
+		memset(tips, 0, 32);
+	}
 }ST;
 
 void AnalyzeData(char* lp)
