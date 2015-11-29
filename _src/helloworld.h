@@ -1,5 +1,13 @@
-
+//Library
+#include <iostream>
+#include <vector>
+#include <array>
+#include <list>
+#include <string>
+#include <forward_list>
+#include <deque>
 #include <typeinfo>
+#include <memory.h>
 #include <iostream>
 using namespace std;
 
@@ -8,8 +16,6 @@ using namespace std;
 #ifndef _HELLO_WORLD_H
 #define _HELLO_WORLD_H
 
-
-void showVector(vector<int>& vec);
 
 
 void  _auto();
@@ -24,6 +30,7 @@ void _sizeof();
 
 void _charArray();
 
+void showVector(vector<int>& vec);
 
 template <typename T>
 void ShowVariableInfo(T t)

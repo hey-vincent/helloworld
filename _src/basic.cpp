@@ -6,6 +6,8 @@
  */
 #include "basic.h"
 #include <iostream>
+
+
 using namespace std;
 
 void _pointer()

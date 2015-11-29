@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1448771875 source:e:\git\helloworld\helloworld_codeblocks\main.cpp
+	<iostream>
+	<pthread.h>
+
+1448771891 source:e:\git\helloworld\_src\basic.cpp
+	"basic.h"
+	<iostream>
+
+1448463174 e:\git\helloworld\_src\basic.h
+
+1448772291 source:e:\git\helloworld\_src\main.cpp
+	"helloworld.h"
+	"basic.h"
+	"../_diy/ForwardList.h"
+
+1448772306 e:\git\helloworld\_src\helloworld.h
+	<iostream>
+	<vector>
+	<array>
+	<list>
+	<string>
+	<forward_list>
+	<deque>
+	<typeinfo>
+	<memory.h>
+	<iostream>
+
+1448463174 e:\git\helloworld\_diy\forwardlist.h
+	<iostream>
+	<memory.h>
+
+1448772219 source:e:\git\helloworld\_src\helloworld.cpp
+	"helloworld.h"
+
